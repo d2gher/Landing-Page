@@ -1,0 +1,76 @@
+body {
+	margin: 0;
+	color: rgb(226, 226, 226);
+	background: linear-gradient(to left, rgb(41, 128, 185), rgb(22, 31, 41));
+}
+nav {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	background-color: rgb(218, 218, 218);
+	font: 25px 'Shrikhand', cursive;
+}
+nav a {
+	display: inline-block;
+	color: rgb(29, 29, 29);
+	text-align: center;
+	padding: 0.5rem 1rem;
+}
+@media only screen and (max-width: 1000px) {
+	/* hide the hamburger */
+	nav a {
+		display: block;
+	}
+}
+a:hover,
+a[class="active"] {
+	color: rgba(218, 218, 218, 0.534);
+	background-color: rgb(19, 27, 34);
+	cursor: pointer;
+}
+/* adjust the position of our main part of the page, i.e.the sections*/
+h1 {
+	font: 80px 'Shrikhand', cursive;
+}
+main {
+	padding: 20px;
+	padding: 1vw;
+}
+h2 {
+	font: 40px 'Shrikhand', cursive;
+	padding: 20px;
+	border-bottom: 1px solid rgb(0, 216, 0);
+}
+p {
+	font: 35px 'Patrick Hand', cursive;
+}
+section {
+	margin-bottom: 80px;
+	padding: 20px;
+}
+section[class="active"] {
+	background-color: rgba(0, 17, 255, 0.239);
+	border-radius: 10px;
+}
+section:nth-child(odd) {
+	text-align: left;
+}
+section:nth-child(even) {
+	text-align: right;
+}
+
+/* stylize the button that scrolls us up to the top of the page */
+#to-top {
+	display: none;
+	position: fixed;
+	color: rgb(218, 218, 218);
+	top: 90vh;
+	left: 90vw;
+	background-color: rgba(255, 0, 0, 0.712);
+	width: 100px;
+	height: 60px;
+	border-radius: 0.5em;
+	font: 25px 'Patrick Hand', cursive;
+	z-index: 100;
+	cursor: pointer;
+}
