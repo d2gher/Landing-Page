@@ -3,18 +3,21 @@ body {
 	color: rgb(226, 226, 226);
 	background: linear-gradient(to left, rgb(41, 128, 185), rgb(22, 31, 41));
 }
-nav {
+nav,
+ul {
 	position: -webkit-sticky;
 	position: sticky;
 	top: 0;
 	background-color: rgb(218, 218, 218);
 	font: 25px 'Shrikhand', cursive;
 }
-nav a {
+nav ul,
+nav ul li,
+nav ul a {
 	display: inline-block;
 	color: rgb(29, 29, 29);
 	text-align: center;
-	padding: 0.5rem 1rem;
+	padding: 0 0.3rem;
 }
 @media only screen and (max-width: 1000px) {
 	/* hide the hamburger */
