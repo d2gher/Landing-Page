@@ -12,7 +12,6 @@ for(let i = 1; i <= 6; i++) {
     // scroll into the view when the link is clicked 
     link.addEventListener("click", e => {
         document.getElementById("section" + i).scrollIntoView({behavior: "smooth"});
-        link.style
     })
     section.appendChild(link);
     navBar.appendChild(section)
@@ -43,7 +42,6 @@ document.addEventListener("scroll", function() {
                     link.setAttribute("class", "active");
                 } else {
                     link.removeAttribute("class");
-                    console.log(element.id)
                 }
             });
         } 
