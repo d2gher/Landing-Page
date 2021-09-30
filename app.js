@@ -10,7 +10,8 @@ for(let i = 1; i <= 6; i++) {
     let link = document.createElement("a");
     link.textContent = "section " + i;
     // scroll into the view when the link is clicked 
-    link.addEventListener("click", e => {
+    link.addEventListener("click", (event) => {
+        event.preventDefault();
         document.getElementById("section" + i).scrollIntoView({behavior: "smooth"});
     })
     section.appendChild(link);
