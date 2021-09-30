@@ -1,6 +1,22 @@
 // get the elemets we're going to modified
 const HTML = document.querySelector("html");
 const TOPBUTTON = document.querySelector("#to-top");
+const navBar = document.querySelector("#navbar_list");
+
+
+//build the nav bar
+for(let i = 1; i <= 6; i++) {
+    let section = document.createElement("li");
+    let link = document.createElement("a");
+    link.textContent = "section " + i;
+    // scroll into the view when the link is clicked 
+    link.addEventListener("click", e => {
+        document.getElementById("section" + i).scrollIntoView({behavior: "smooth"});
+        link.style
+    })
+    section.appendChild(link);
+    navBar.appendChild(section)
+}
 
 // hide the nav bar when we scroll and show/hide the scroll up button
 document.addEventListener("scroll", function() {
@@ -18,13 +34,16 @@ document.addEventListener("scroll", function() {
         // detect when the section is in view and add active class to it 
         if (element.getBoundingClientRect().top < 300 && element.getBoundingClientRect().bottom > 300) {
             element.setAttribute("class", "active");
-            let links = document.querySelectorAll("nav a");
+            let links = document.querySelectorAll("nav ul li a");
             // highlight the link in the nav bar that is connected to this section;
             links.forEach(function(link) {
-                if (link.href == "http://127.0.0.1:5500/index.html#" + element.id) {
+                let number = element.id.indexOf("n");
+                
+                if (link.textContent == "section " + element.id.substring(number + 1)) {
                     link.setAttribute("class", "active");
                 } else {
                     link.removeAttribute("class");
+                    console.log(element.id)
                 }
             });
         } 
