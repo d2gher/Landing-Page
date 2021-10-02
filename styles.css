@@ -20,9 +20,10 @@ nav ul a {
 	padding: 0 0.3rem;
 }
 @media only screen and (max-width: 1000px) {
-	/* hide the hamburger */
-	nav a {
+	nav ul li {
 		display: block;
+		margin-left: 40vw;
+		font-size: 4vw;
 	}
 }
 a:hover,
