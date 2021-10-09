@@ -1,0 +1,137 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	color: rgb(226, 226, 226);
+	background: linear-gradient(to right, rgb(41, 128, 185), rgb(22, 31, 41));
+}
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.hamburger {
+	display: none;
+}
+
+.bar {
+	display: block;
+	width: 25px;
+	height: 3px;
+	margin: 5px auto;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	background-color: #101010;
+}
+@media only screen and (max-width: 768px) {
+	.nav-list {
+		position: fixed;
+		left: -120%;
+		top: 0%;
+		flex-direction: column;
+		width: 100%;
+		border-radius: 10px;
+		text-align: center;
+		transition: 0.3s;
+		box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+	}
+
+	.nav-list.active {
+		left: 0;
+	}
+
+	.nav-item {
+		margin: 2.5rem 0;
+	}
+
+	.hamburger {
+		display: block;
+		cursor: pointer;
+		margin-left: 20px;
+	}
+	.hamburger.active .bar:nth-child(2) {
+		opacity: 0;
+	}
+
+	.hamburger.active .bar:nth-child(1) {
+		transform: translateY(8px) rotate(45deg);
+	}
+
+	.hamburger.active .bar:nth-child(3) {
+		transform: translateY(-8px) rotate(-45deg);
+	}
+}
+header,
+nav,
+ul {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	background-color: rgb(218, 218, 218);
+	font: 30px 'Shrikhand', cursive;
+}
+nav ul,
+nav ul li,
+nav ul a {
+	display: inline-block;
+	color: rgb(29, 29, 29);
+	text-align: center;
+	padding: 0 0.3rem;
+}
+
+a:hover,
+a[class="active"] {
+	color: rgba(218, 218, 218, 0.534);
+	background-color: rgb(19, 27, 34);
+	cursor: pointer;
+}
+/* adjust the position of our main part of the page, i.e.the sections*/
+h1 {
+	font: 50px 'Shrikhand', cursive;
+}
+main {
+	padding: 20px;
+	padding: 1vw;
+}
+h2 {
+	font: 40px 'Shrikhand', cursive;
+	padding: 20px;
+	border-bottom: 1px solid rgb(0, 216, 0);
+}
+p {
+	font: 35px 'Patrick Hand', cursive;
+}
+section {
+	margin-bottom: 80px;
+	padding: 20px;
+}
+section[class="active"] {
+	background-color: rgba(0, 17, 255, 0.239);
+	border-radius: 10px;
+}
+section:nth-child(odd) {
+	text-align: left;
+}
+section:nth-child(even) {
+	text-align: right;
+}
+
+/* stylize the button that scrolls us up to the top of the page */
+#to-top {
+	display: none;
+	position: fixed;
+	color: rgb(218, 218, 218);
+	top: 90vh;
+	left: 90vw;
+	background-color: rgba(255, 0, 0, 0.712);
+	width: 100px;
+	height: 60px;
+	border-radius: 0.5em;
+	font: 25px 'Patrick Hand', cursive;
+	z-index: 100;
+	cursor: pointer;
+}
