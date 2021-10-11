@@ -2,22 +2,22 @@
 const HTML = document.querySelector("html");
 const TOPBUTTON = document.querySelector("#to-top");
 const navBar = document.querySelector(".nav-list");
-
+const sections = document.querySelectorAll("section");
 
 //build the nav bar
-for(let i = 1; i <= 6; i++) {
-    let section = document.createElement("li");
-    section.setAttribute("class", "nav-item");
+for(let i = 1; i <= sections.length; i++) {
+    let item = document.createElement("li");
+    item.setAttribute("class", "nav-item");
     let link = document.createElement("a");
     link.setAttribute("class", "nav-link");
-    link.textContent = "section " + i;
+    link.textContent = sections[i-1].querySelector("h2").textContent;
     // scroll into the view when the link is clicked 
     link.addEventListener("click", (event) => {
         event.preventDefault();
-        document.getElementById("section" + i).scrollIntoView({behavior: "smooth"});
+        sections[i-1].scrollIntoView({behavior: "smooth"});
     })
-    section.appendChild(link);
-    navBar.appendChild(section)
+    item.appendChild(link);
+    navBar.appendChild(item)
 }
 
 const hamburger = document.querySelector(".hamburger");
@@ -38,7 +38,7 @@ document.addEventListener("scroll", function() {
         TOPBUTTON.style.display = "none";
     }
     // highlight post in view and it's link in the nav bar
-    let sections = document.querySelectorAll("section");
+
     // once we scroll we run this for every post
     sections.forEach(function(element) {
         // detect when the section is in view and add active class to it 
@@ -64,5 +64,5 @@ document.addEventListener("scroll", function() {
 
 // scroll up when the button is clicked
 TOPBUTTON.addEventListener("click", function() {
-    HTML.scrollTop = 0;
+    window.scrollTo({top: 0, behavior: "smooth"});
 });
